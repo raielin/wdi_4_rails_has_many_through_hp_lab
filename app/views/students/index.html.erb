@@ -16,9 +16,9 @@
         <td><%= student.name %></td>
         <td><%= student.age %></td>
         <td><%= student.house.name %></td>
-        <td><%= link_to 'Show', student %></td>
+        <td><%= link_to 'View More', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,6 +26,6 @@
 
 <br>
 
-<%= link_to 'New Student', new_student_path %>
+<%= link_to 'Add New Student', new_student_path %>  |  <%= link_to 'View Hogwarts Houses', houses_path %>
 
 <!-- in ERB tags: student.spells.first.name for return value in table -->
