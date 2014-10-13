@@ -37,4 +37,40 @@ students_list.each do |student_name, age, house_id|
   Student.create(name: student_name, age: age, house_id: house_id)
 end
 
+spells_list = [
+  "Accio"
+  "Aguamenti"
+  "Expelliarmus"
+  "Incendio"
+  "Levicorpus"
+  "Lumos"
+  "Muffliato"
+  "Oculus Reparo"
+  "Obliviate"
+  "Petrificus Totalus"
+  "Portus"
+  "Protego"
+]
 
+spells_list.each do |spell|
+  Spell.create(spell_name: spell)
+end
+
+courses_list = [
+  "Charms"
+  "Dark Arts"
+  "Defense Against the Dark Arts"
+  "Flying"
+  "Herbology"
+  "History of Magic"
+  "Potions"
+  "Transfiguration"
+  "Ancient Runes"
+  "Arithmancy"
+  "Care of Magical Creatures"
+  "Apparition"
+]
+
+courses_list.each do |course|
+  Course.create(course_name: course)
+end
