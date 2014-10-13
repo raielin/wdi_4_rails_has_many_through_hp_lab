@@ -3,8 +3,7 @@ class CreateSpells < ActiveRecord::Migration
     create_table :spells do |t|
       t.string :spell_name
       t.belongs_to :student, index: true
-      t.string :course
-      t.string :belongs_to
+      t.belongs_to :course, index: true
     end
   end
 end
