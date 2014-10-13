@@ -26,9 +26,9 @@ end
 
 students_list = [
   ["Harry Potter", 15, House.find_by(name: 'Gryffindor').id],
-  ["Ron Weasley", 16, House.find_by(name: 'Ravenclaw').id],
+  ["Ron Weasley", 16, House.find_by(name: 'Gryffindor').id],
   ["Hermoine Granger", 14, House.find_by(name: 'Gryffindor').id],
-  ["Heather Murphy", 15, House.find_by(name:'Gryffindor').id],
+  ["Heather Murphy", 15, House.find_by(name:'Ravenclaw').id],
   ["Neville Longbottom", 16, House.find_by(name: 'Hufflepuff').id],
   ["Draco Malfoy", 15, House.find_by(name: 'Slytherin').id]
 ]
