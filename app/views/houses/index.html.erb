@@ -1,5 +1,3 @@
-<h1>Hogwarts Home : Houses</h1>
-
 <table>
   <thead>
     <tr>
@@ -16,6 +14,9 @@
         <td><%= link_to 'Edit', edit_house_path(house) %></td>
         <td><%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+    <% end %>
+    <% if @houses.size == 0 %>
+      <em>No Hogwarts Houses Found</em>
     <% end %>
   </tbody>
 </table>
