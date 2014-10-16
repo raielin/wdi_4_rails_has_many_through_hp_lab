@@ -8,7 +8,8 @@
 
 House.delete_all
 Student.delete_all
-
+Course.delete_all
+Spell.delete_all
 
 
 houses_list = [
@@ -23,54 +24,54 @@ houses_list.each do |house_name|
   House.create(name: house_name)
 end
 
-
 students_list = [
-  ["Harry Potter", 15, House.find_by(name: 'Gryffindor').id],
-  ["Ron Weasley", 16, House.find_by(name: 'Gryffindor').id],
-  ["Hermoine Granger", 14, House.find_by(name: 'Gryffindor').id],
-  ["Heather Murphy", 15, House.find_by(name:'Ravenclaw').id],
-  ["Neville Longbottom", 16, House.find_by(name: 'Hufflepuff').id],
-  ["Draco Malfoy", 15, House.find_by(name: 'Slytherin').id]
+  ["Harry Potter", 15, "Gryffindor"],
+  ["Ron Weasley", 16, "Gryffindor"],
+  ["Hermoine Granger", 14, "Gryffindor"],
+  ["Heather Murphy", 15, "Ravenclaw"],
+  ["Neville Longbottom", 16, "Hufflepuff"],
+  ["Draco Malfoy", 15, "Slytherin"]
 ]
 
-students_list.each do |student_name, age, house_id|
-  Student.create(name: student_name, age: age, house_id: house_id)
+students_list.each do |student_name, age, house|
+  Student.create(name: student_name, age: age, house_id: House.find_by(name: house).id)
 end
 
-# spells_list = [
-#   "Accio"
-#   "Aguamenti"
-#   "Expelliarmus"
-#   "Incendio"
-#   "Levicorpus"
-#   "Lumos"
-#   "Muffliato"
-#   "Oculus Reparo"
-#   "Obliviate"
-#   "Petrificus Totalus"
-#   "Portus"
-#   "Protego"
-# ]
+courses_list = [
+  "Charms",
+  "Dark Arts",
+  "Defense Against the Dark Arts",
+  "Flying",
+  "Herbology",
+  "History of Magic",
+  "Potions",
+  "Transfiguration",
+  "Ancient Runes",
+  "Arithmancy",
+  "Care of Magical Creatures",
+  "Apparition"
+]
 
-# spells_list.each do |spell|
-#   Spell.create(spell_name: spell)
-# end
+courses_list.each do |course|
+  Course.create(course_name: course)
+end
 
-# courses_list = [
-#   "Charms"
-#   "Dark Arts"
-#   "Defense Against the Dark Arts"
-#   "Flying"
-#   "Herbology"
-#   "History of Magic"
-#   "Potions"
-#   "Transfiguration"
-#   "Ancient Runes"
-#   "Arithmancy"
-#   "Care of Magical Creatures"
-#   "Apparition"
-# ]
+spells_list = [
+  ["Accio", "Defense Against the Dark Arts", "Harry Potter"],
+  ["Aguamenti", "Charms", "Ron Weasley"],
+  ["Expelliarmus", "Defense Against the Dark Arts", "Heather Murphy"],
+  ["Incendio", "Transfiguration", "Neville Longbottom"],
+  ["Levicorpus", "Apparition", "Draco Malfoy"],
+  ["Lumos", "Arithmancy", "Hermoine Granger"],
+  ["Muffliato", "Dark Arts", "Draco Malfoy"],
+  ["Oculus Reparo", "Ancient Runes", "Harry Potter"],
+  ["Obliviate", "History of Magic", "Neville Longbottom"],
+  ["Petrificus Totalus", "Care of Magical Creatures", "Harry Potter"],
+  ["Portus", "Herbology", "Ron Weasley"],
+  ["Protego", "Potions", "Hermoine Granger"]
+]
 
-# courses_list.each do |course|
-#   Course.create(course_name: course)
-# end
+spells_list.each do |spell, course, student|
+  Spell.create(spell_name: spell, course_id: Course.find_by(course_name: course).id, student_id: Student.find_by(name: student).id)
+end
+
