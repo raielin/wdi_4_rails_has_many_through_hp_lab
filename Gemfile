@@ -8,6 +8,7 @@ gem 'pg'
 
 gem 'rake', '10.3.2'
 gem 'pry-byebug'
+gem 'newrelic_rpm'
 
 gem 'rails_12factor', group: :production
 # Use SCSS for stylesheets
